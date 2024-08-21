@@ -5,4 +5,8 @@ Program ini membuat kode JavaScript untuk mengonversi file google docs menjadi p
 * Mengonversi semua file yang ada di dalam sebuah folder menjadi pdf disimpan di dalam folder yang sama
 * Mengonversi semua file yang ada di dalam sebuah folder menjadi pdf disimpan di dalam folder yang berbeda
 
+### Sebelum
 ![Deskripsi Gambar](img/before.png)
+
+### Sesudah
+![Deskripsi Gambar](img/after.png)
