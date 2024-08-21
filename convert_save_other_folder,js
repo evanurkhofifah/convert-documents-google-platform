@@ -1,0 +1,34 @@
+// Mengonversi dan menyimpannya ke folder lain
+function convert_to_pdf(sourceFolderId, targetFolderId) {
+  try {
+    // Mendapatkan folder sumber dan target
+    var sourceFolder = DriveApp.getFolderById(sourceFolderId);
+    var targetFolder = DriveApp.getFolderById(targetFolderId);
+    var invoices = sourceFolder.getFiles();
+
+    while (invoices.hasNext()) {
+      var invoice = invoices.next();
+      var fileName = invoice.getName();
+      try {
+        var id = invoice.getId();
+        var file = DriveApp.getFileById(id);
+        var theBlob = file.getBlob().getAs('application/pdf');
+        
+        // Membuat file PDF di folder target
+        var newPDFFile = targetFolder.createFile(theBlob);
+
+        // Mengubah nama file PDF baru
+        newPDFFile.setName(fileName.replace(/\.[^/.]+$/, "") + ".pdf"); //jika dengan file excel/google sheet yang dikonversi
+        // newPDFFile.setName(fileName.replace(".", "") + ".pdf"); //jika hanya file docs yang dikonversi
+      } catch (e) {
+        // Menangani error yang terjadi selama konversi file tertentu
+        Logger.log('Error saat mengonversi file: ' + fileName + ' - ' + e.message);
+      }
+    }
+  } catch (e) {
+    // Menangani error umum yang terjadi selama proses
+    Logger.log('Error di luar proses konversi: ' + e.message);
+  }
+}
+
+convert_to_pdf("sourceFolderID", "targetFolderID");
