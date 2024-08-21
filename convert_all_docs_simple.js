@@ -1,7 +1,7 @@
 /* Fungsi untuk mengonversi semua file di dalam sebuah folder Google Drive menjadi file PDF, 
 lalu menyimpannya kembali ke dalam folder yang sama.*/
 function convert_to_pdf(folder) {
-  var folder = DriveApp.getFolderById("1kKjimtuR5yds2ZdIyR2BA-0cgbC4mjwo");
+  var folder = DriveApp.getFolderById("abcdefghi123456789");
   var invoices = folder.getFiles();
 
   // Perulangan untuk mengonversi semua file menjadi format pdf
