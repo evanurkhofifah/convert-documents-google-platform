@@ -1,7 +1,7 @@
 // Fungsi untuk mengonversi dokumen Google Docs menjadi PDF dan menyimpannya di dalam folder tertentu di Google Drive
 function docs_to_pdf(fileID) {
-  var pdfFolder = DriveApp.getFolderById("1kKjimtuR5yds2ZdIyR2BA-0cgbC4mjwo"); 
-  var docFile = DriveApp.getFileById("1zAfrs0j1GTVSCfzxEdmMIi5BM5giwx3aobnd7O115N4")
+  var pdfFolder = DriveApp.getFolderById("abcdefghi"); 
+  var docFile = DriveApp.getFileById("123456789")
   
   // Memanggil fungsi createPDF dengan parameter ID file dan ID folder tempat menyimpan PDF
   createPDF(docFile.getId(), pdfFolder.getId(), function (fileID, folderID) {
